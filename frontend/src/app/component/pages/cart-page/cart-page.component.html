@@ -1,0 +1,35 @@
+<div class="container">
+    <h2>Your Cart</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Quantity</th>
+          <th>Price</th>
+          <th>Total</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Loop through cart items and display details -->
+        <tr *ngFor="let cartItem of cartItems">
+          <td>{{ cartItem.food.name }}</td>
+          <td>{{ cartItem.quantity }}</td>
+          <td>{{ cartItem.food.price | currency }}</td>
+          <td>{{ cartItem.price | currency }}</td>
+          <td>
+            <button (click)="changeQuantity(cartItem.food.id, cartItem.quantity - 1)">-</button>
+            <button (click)="changeQuantity(cartItem.food.id, cartItem.quantity + 1)">+</button>
+            <button (click)="removeFromCart(cartItem.food.id)">Remove</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <div class="total">
+      <p>Total Price: {{ totalCartPrice | currency }}</p>
+      <button (click)="clearCart()">Clear Cart</button>
+      <!-- Add checkout button here with appropriate functionality -->
+    </div>
+  </div>
+  
