@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-KitchenStoryApplication<KitchenStory>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.kitchenstory.KitchenStoryApplication",
+            "projectName": "KitchenStory",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
